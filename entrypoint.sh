@@ -11,4 +11,4 @@ python manage.py collectstatic --noinput
 
 # Start Gunicorn server
 echo "Starting Gunicorn server..."
-gunicorn --bind 0.0.0.0:8000 raad_panel.wsgi:application
+gunicorn --bind 0.0.0.0:8000 asaa.wsgi:application
