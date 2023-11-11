@@ -24,7 +24,7 @@ class UserActivation(models.Model):
         return super().save(force_insert, force_update, using, update_fields)
 
     def __str__(self):
-        return str(self.name) + str(self.phone_number)
+        return str(self.name) + ' ' + str(self.phone_number)
 
     class Meta:
         verbose_name_plural = "شماره سریال ها"
