@@ -41,4 +41,5 @@ def check_license_key(request):
     if app_version_usecase.is_update_available(app_version):
         return JsonResponse({'code': 101, 'message': 'به روز رسانی!'}, status=200)  # fix message
 
-    return JsonResponse({'code': 100, 'message': user_activation.phone_number + ' عزیز به اپلیکیشن آسا خوش آمدید!'}, status=200)
+    name = user_activation.name or user_activation.phone_number
+    return JsonResponse({'code': 100, 'message': name + ' عزیز به اپلیکیشن آسا خوش آمدید!'}, status=200)
