@@ -5,10 +5,10 @@ from .utils import normalize_phone_number
 
 
 class UserActivation(models.Model):
-    phone_regex = RegexValidator(regex=r'^(\+98|00|0)?9\d{9}$', message="شماره تلفن نامعتبر")
+    phone_regex = RegexValidator(regex=r'^(\+98|00|0)?9\d{9}$', message="شماره تلفن نامعتبر!")
 
     name = models.CharField(max_length=200, blank=True, verbose_name='نام')
-    phone_number = models.CharField(max_length=200, blank=False, verbose_name='تلفن')
+    phone_number = models.CharField(max_length=200, blank=False, verbose_name='تلفن', validators=[phone_regex])
     license_key = models.CharField(max_length=200, unique=True, blank=True, verbose_name='کلید لایسنس')
     device_id = models.CharField(max_length=200, blank=True)
     expiration_date = models.DateTimeField(verbose_name='تاریخ انقضا')
