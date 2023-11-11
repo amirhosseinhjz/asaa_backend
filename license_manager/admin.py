@@ -8,4 +8,4 @@ class UserActivationAdmin(admin.ModelAdmin):
     search_fields = ('name', 'phone_number')
     list_filter = ('expiration_date',)
     readonly_fields = ('license_key', 'device_id')
-    list_display_links = ('name', 'phone_number', 'license_key', 'device_id', 'expiration_date')
+    list_display_links = ('name', 'phone_number')
